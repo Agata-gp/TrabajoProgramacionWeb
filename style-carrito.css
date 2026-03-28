@@ -40,16 +40,17 @@ a {
     background-color: #f0f0f0;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    padding-bottom: 500px;
+    grid-template-columns: 2fr 1fr;
+    margin: auto; 
+    height:100%;   
 }
 
 aside {
     background-color: #454545;
     display: grid;
-    padding: 20px 20px 0px 20px;
+    padding: 20px;
     color: white;
-    padding-bottom: 1000px;
+    
 }
 
 article {
