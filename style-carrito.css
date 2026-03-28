@@ -1,6 +1,6 @@
 header {
-    background-color: #656565;
-    color: white;
+    background-image: linear-gradient(to bottom right, #9286EA, #EF6794);
+    color: #F3F3F1;
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -13,22 +13,16 @@ h1 {
     margin: auto;
 }
 
-canvas {
-    background-color: white;
-}
-
 nav ul{
-    background-color: #c2c2c2;
+    background-color: #18142D;
     display: flex;
     justify-content: center;
-    padding: 10px;
 }
 
 nav ul li{
     list-style: none;
     padding: 10px 20px;
-    border: #3d3d3d solid 1px;
-    margin: 10px;
+    color: #F3F3F1;
 }
 
 a {
