@@ -2,9 +2,7 @@
     font-family: Nova;
     src: url(Nova_Mono/NovaMono-Regular.ttf);
 }
-body {
-    font-family: Nova;
-}
+
 
 header {
     background-image: linear-gradient(to bottom right, #9286EA, #EF6794);
@@ -45,7 +43,7 @@ a {
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
-    padding-bottom: 500px;
+    
 }
 
 aside {
@@ -61,4 +59,10 @@ article {
     padding: 20px;
 }
 
+footer {
+    background-color: #18142D;
+    color: #F3F3F1;
+    text-align: center;
+    padding: 20px;
+}
 
