@@ -22,12 +22,12 @@ nav ul{
 nav ul li{
     list-style: none;
     padding: 10px 20px;
-    color: #F3F3F1;
+    
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: #F3F3F1;
 }
 
 #main-section {
