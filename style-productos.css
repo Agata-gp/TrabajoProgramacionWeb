@@ -6,16 +6,16 @@
 header {
     background-image: linear-gradient(to bottom right, #9286EA, #EF6794);
     color: #F3F3F1;
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: left;
+    height: 100px;
 }
 
 h1 {
-    font-size: 80px;
-    padding: 10px 500px 10px 50px;
-    margin: auto;
+    font-size: 50px;
+    padding: 10px;
     font-family: Nova;
 }
 
