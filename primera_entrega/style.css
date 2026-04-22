@@ -1,0 +1,253 @@
+@font-face {
+    font-family: Nova;
+    src: url(Nova_Mono/NovaMono-Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+header {
+    background-image: linear-gradient(to bottom right, #9286EA, #EF6794);
+    color: #F3F3F1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    padding: 10px;
+    font-family: Nova;
+}
+
+canvas {
+    width: 100px;
+    height: 100px;
+}
+
+nav {
+    background-color: #18142D;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: #F3F3F1;
+    padding: 15px 20px;
+}
+
+nav a:hover {
+    background-color: #9286EA;
+}
+
+#main-section {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    min-height: 600px;
+}
+
+aside {
+    background-color: #454545;
+    color: white;
+    padding: 25px;
+}
+
+aside h2 {
+    margin-bottom: 15px;
+    color: #F3F3F1;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside a {
+    color: #F3F3F1;
+    text-decoration: none;
+}
+
+aside a:hover {
+    color: #EF6794;
+}
+
+#middle-section {
+    padding: 30px;
+}
+
+.landing {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.landing h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #18142D;
+}
+
+.landing p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.search-bar label {
+    font-weight: bold;
+}
+
+.search-bar input {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    width: 120px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #9286EA;
+    color: white;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #EF6794;
+}
+
+.cards-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.cards-section h2 {
+    grid-column: 1 / -1;
+    color: #18142D;
+}
+
+.card,
+.event,
+.drag-card,
+.info-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card h3,
+.event h3,
+.drag-card h3 {
+    margin-bottom: 10px;
+    color: #9286EA;
+}
+
+.card p,
+.event p,
+.drag-card p,
+.info-box p {
+    line-height: 1.5;
+}
+
+.calendar-section {
+    display: grid;
+    gap: 15px;
+}
+
+.calendar-section h2 {
+    color: #18142D;
+}
+
+.event {
+    border-left: 5px solid #EF6794;
+}
+
+.api-html5 {
+    margin-top: 30px;
+}
+
+.drag-card {
+    color: #333333;
+    margin-top: 15px;
+    cursor: grab;
+}
+
+footer {
+    background-color: #18142D;
+    color: #F3F3F1;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+address {
+    font-style: normal;
+}
+
+@media (max-width: 900px) {
+    #main-section {
+        grid-template-columns: 1fr;
+    }
+
+    .cards-section {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    #middle-section {
+        padding: 15px;
+    }
+}
