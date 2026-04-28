@@ -4,9 +4,8 @@ function setup() {
     const ctx = canvas.getContext("2d");
     const white = "#F3F3F1";
     
-    // Apply scale only on carrito and productos pages
-    const currentPage = window.location.pathname;
-    const scale = (currentPage.includes('carrito') || currentPage.includes('productos')) ? 0.6 : 1;
+    // Escalado para mantener proporciones en diferentes tamaños de canvas
+    const scale = canvas.width / 100;
 
     // Limpiar el canvas antes de dibujar
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -57,3 +56,38 @@ function setup() {
 }
 
 window.addEventListener("DOMContentLoaded", setup);
+
+window.onload = function () {
+    buscarTienda();
+};
+
+function buscarTienda() {
+    let mensaje = document.getElementById("mensaje-tienda");
+    let mapa = document.getElementById("mapa-google");
+
+    if (!mensaje || !mapa) return;
+
+    if (navigator.geolocation) {
+        mensaje.textContent = "Buscando tienda cercana...";
+
+        navigator.geolocation.getCurrentPosition(
+            function(posicion) {
+                let lat = posicion.coords.latitude;
+                let lon = posicion.coords.longitude;
+
+                mensaje.textContent = "Mostrando tienda más cercana.";
+
+                mapa.src =
+                    "https://maps.google.com/maps?q=tienda%20videojuegos%20near%20"
+                    + lat + "," + lon +
+                    "&z=13&output=embed";
+            },
+
+            function() {
+                mensaje.textContent = "No se pudo obtener la ubicación.";
+            }
+        );
+    } else {
+        mensaje.textContent = "Geolocalización no disponible.";
+    }
+}
