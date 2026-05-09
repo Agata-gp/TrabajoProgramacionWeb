@@ -1,10 +1,7 @@
-/* Fuente personalizada */
 @font-face {
     font-family: Nova;
     src: url(Nova_Mono/NovaMono-Regular.ttf);
 }
-
-/* Ajustes generales */
 
 * {
     box-sizing: border-box;
@@ -17,34 +14,36 @@ body {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #f7f4ff, #ffeaf2);
-    color: #2b2b2b;
+    background: radial-gradient(circle at top, #18243a, #070912 70%);
+    color: #e8f6ff;
 }
 
 /* Cabecera */
 
 header {
-    background: linear-gradient(135deg, #9286EA, #EF6794);
-    color: #F3F3F1;
+    background: linear-gradient(135deg, #07111f, #14213d, #39FF88);
+    color: #e8f6ff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 35px 60px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.45);
+    border-bottom: 2px solid #39FF88;
 }
 
 h1 {
     font-size: 100px;
     font-family: Nova, Arial, sans-serif;
-    letter-spacing: 3px;
-    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+    letter-spacing: 4px;
+    color: #39FF88;
+    text-shadow: 0 0 10px #39FF88, 0 0 25px #0077ff;
 }
 
 .slogan {
     font-size: 17px;
     margin-top: 15px;
     margin-left: 15px;
-    opacity: 0.9;
+    color: #d8f8ff;
 }
 
 #logo {
@@ -52,15 +51,17 @@ h1 {
     height: 120px;
 }
 
-/* Navegacion */
+/* Navegación */
 
 nav {
-    background-color: #18142D;
+    background-color: #050814;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 40px;
     gap: 20px;
+    border-bottom: 1px solid #39FF88;
+    box-shadow: 0 0 18px rgba(0, 212, 255, 0.35);
 }
 
 nav ul {
@@ -77,25 +78,30 @@ nav ul li {
 nav a {
     display: block;
     text-decoration: none;
-    color: #F3F3F1;
+    color: #e8f6ff;
     padding: 12px 18px;
     border-radius: 25px;
     transition: 0.3s;
+    border: 1px solid transparent;
 }
 
 nav a:hover {
-    background-color: #9286EA;
+    border: 1px solid #39FF88;
+    color: #39FF88;
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.8);
     transform: translateY(-2px);
 }
 
-/* Barra de busqueda */
+/* Barra de búsqueda */
 
 .search-bar {
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: #0b1220;
     padding: 5px;
     border-radius: 30px;
+    border: 1px solid #39FF88;
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
 }
 
 .search-bar input {
@@ -104,12 +110,18 @@ nav a:hover {
     padding: 10px 15px;
     border-radius: 30px;
     width: 220px;
+    background: transparent;
+    color: #e8f6ff;
+}
+
+.search-bar input::placeholder {
+    color: #8fb8c8;
 }
 
 .search-bar button {
     border: none;
-    background: linear-gradient(135deg, #9286EA, #EF6794);
-    color: white;
+    background: linear-gradient(135deg, #39FF88, #0077ff);
+    color: #050814;
     padding: 10px 18px;
     border-radius: 25px;
     cursor: pointer;
@@ -117,7 +129,7 @@ nav a:hover {
 }
 
 .search-bar button:hover {
-    opacity: 0.85;
+    background: #39ff88;
 }
 
 /* Layout principal */
@@ -130,132 +142,113 @@ nav a:hover {
     min-height: 600px;
 }
 
-/* Calendario */
-
-#calendario-estrenos {
-    background: #100c18;
-    color: white;
-    padding: 30px;
-    border-radius: 15px;
-}
-
-.calendario-header {
-    background: none;
-    box-shadow: none;
-    padding: 0;
-    margin-bottom: 20px;
-}
-
-.calendario-header h2 {
-    font-size: 36px;
-    text-transform: uppercase;
-    color: #d8d0f0;
-}
-
-.calendario-header h2 span {
-    color: transparent;
-    -webkit-text-stroke: 1px #8b6fcf;
-}
-
-.lista-estrenos {
-    display: flex;
-    gap: 25px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-}
-
-.estreno img {
-    width: 110px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.estreno p {
-    margin-top: 8px;
-    text-transform: uppercase;
-    color: #d8d0f0;
-}
-
-/* Seccion central */
+/* Sección central */
 
 #middle-section {
     padding: 40px;
-    background-color: white;
+    background: rgba(10, 18, 35, 0.95);
     border-radius: 25px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.25);
 }
 
 article h2 {
     font-size: 38px;
-    color: #18142D;
+    color: #39FF88;
     margin-bottom: 20px;
 }
 
 article p {
     font-size: 18px;
     line-height: 1.7;
+    color: #d8f8ff;
 }
 
-/* Banner principal */
+/* Banner */
 
-.hero {
-    background: linear-gradient(135deg, #9286EA, #EF6794);
+.card {
+    background: linear-gradient(135deg, #07111f, #003b66, #39FF88);
     color: white;
     padding: 35px;
-    border-radius: 25px;
     margin-bottom: 35px;
     text-align: center;
+    border-radius: 25px;
+    border: 1px solid #39FF88;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
 }
 
-.hero h2 {
+.card h2 {
     font-size: 40px;
     margin-bottom: 15px;
+    color: white;
 }
 
 /* Botones */
 
 button {
-    border: none;
+    border: 1px solid #39FF88;
     padding: 12px 20px;
     border-radius: 25px;
-    background-color: #18142D;
-    color: white;
+    background-color: #050814;
+    color: #39FF88;
     cursor: pointer;
     font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.45);
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #EF6794;
+    background-color: #39FF88;
+    color: #050814;
 }
 
-/* Enlaces de interes */
+/* Laterales */
+
+aside {
+    background: #050814;
+    color: white;
+    padding: 25px;
+    border-radius: 20px;
+    line-height: 1.6;
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
+}
+
+aside h2 {
+    margin-bottom: 15px;
+    color: #39FF88;
+}
+
+/* Enlaces de interés */
 
 #enlaces h2 {
-    color: #9286EA;
+    color: #39FF88;
     font-size: 30px;
 }
 
-#enlaces ul li{
-    margin-bottom:10px;
+#enlaces ul li {
+    margin-bottom: 10px;
 }
 
-#enlaces a{
-    color:white;
-    text-decoration:none;
+#enlaces a {
+    color: #d8f8ff;
+    text-decoration: none;
 }
 
-#enlaces a:hover{
-    color:#EF6794;
+#enlaces a:hover {
+    color: #39ff88;
 }
 
-/*Barra de espacio*/
-hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(to right, #9286EA, #EF6794);
-    margin: 35px;
-    border-radius: 10px;
+/* Mapa */
+
+#mapa-lateral {
+    margin-top: 10px;
+}
+
+#mapa-lateral iframe {
+    margin-top: 10px;
+    border-radius: 12px;
+    border: 1px solid #39FF88;
 }
 
 /* Productos */
@@ -268,20 +261,22 @@ hr {
 }
 
 .product-card {
-    background-color: #f7f4ff;
+    background: #0b1220;
     padding: 25px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    box-shadow: 0 0 18px rgba(0, 212, 255, 0.18);
     transition: 0.3s;
 }
 
 .product-card:hover {
     transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
 }
 
 .product-card h3 {
-    color: #18142D;
+    color: #39FF88;
     margin-bottom: 10px;
 }
 
@@ -290,44 +285,79 @@ hr {
     margin-top: 15px;
     margin-bottom: 10px;
     font-size: 22px;
-    color: #EF6794;
+    color: #39ff88;
 }
 
-/* Lateral derecho */
+/* Calendario */
 
-aside {
-    background: #18142D;
+#calendario-estrenos {
+    background: #050814;
     color: white;
-    padding: 25px;
-    border-radius: 20px;
-    line-height: 1.6;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 35px;
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.25);
 }
 
-aside h2 {
-    margin-bottom: 15px;
+.calendario-header {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 20px;
+    border: none;
 }
 
-#mapa-lateral {
-    margin-top: 10px;
+.calendario-header h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #39FF88;
 }
 
-#mapa-lateral iframe {
-    margin-top: 10px;
-    border-radius: 12px;
+.calendario-header h2 span {
+    color: transparent;
+    -webkit-text-stroke: 1px #39ff88;
+}
+
+.lista-estrenos {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.estreno {
+    text-align: center;
+}
+
+.estreno img {
+    width: 110px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #39FF88;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.35);
+}
+
+.estreno p {
+    margin-top: 8px;
+    text-transform: uppercase;
+    color: #d8f8ff;
 }
 
 /* Opiniones */
 
 #opiniones {
     margin: 35px;
-    background: white;
+    background: rgba(10, 18, 35, 0.95);
     padding: 30px;
     border-radius: 20px;
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.25);
 }
 
 #opiniones h2 {
-    color: #18142D;
+    color: #39FF88;
     margin-bottom: 20px;
 }
 
@@ -338,41 +368,46 @@ aside h2 {
 }
 
 .review-card {
-    background: #f7f4ff;
+    background: #0b1220;
     padding: 25px;
     border-radius: 18px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    box-shadow: 0 0 18px rgba(0, 212, 255, 0.18);
     transition: 0.3s;
 }
 
 .review-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
 }
 
 .review-card h3 {
     margin-bottom: 10px;
-    color: #18142D;
+    color: #39FF88;
 }
 
 .stars {
-    color: gold;
+    color: #39ff88;
     font-size: 22px;
     margin-bottom: 12px;
 }
 
-/* Redes sociales */
+/* Redes */
 
 #redes {
-    background-color: #18142D;
+    background-color: #050814;
     color: #F3F3F1;
     margin: 35px;
     padding: 30px;
     border-radius: 20px;
     text-align: center;
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
 }
 
 #redes h2 {
     margin-bottom: 20px;
+    color: #39FF88;
 }
 
 #redes ul {
@@ -386,23 +421,26 @@ aside h2 {
 }
 
 #redes a {
-    color: #F3F3F1;
+    color: #e8f6ff;
     font-size: 28px;
     transition: 0.3s;
 }
 
 #redes a:hover {
-    color: #EF6794;
+    color: #39ff88;
+    text-shadow: 0 0 12px #39ff88;
 }
 
 /* Footer */
 
 footer {
-    background-color: #18142D;
-    color: #F3F3F1;
+    background-color: #050814;
+    color: #e8f6ff;
     text-align: center;
     padding: 30px;
     margin-top: 20px;
+    border-top: 1px solid rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
 }
 
 footer p {
@@ -446,7 +484,8 @@ address {
     }
 
     #opiniones,
-    #redes {
+    #redes,
+    #calendario-estrenos {
         margin: 20px;
     }
 }
