@@ -148,27 +148,27 @@
 
     <section class="lista-estrenos">
         <article class="estreno">
-            <img src="bioshock.jpg" alt="Portada Bioshock">
+            <img src="imagenes/bioshock.jpg" alt="Portada Bioshock">
             <p><strong>28</strong> <span>Abril</span></p>
         </article>
 
         <article class="estreno">
-            <img src="marioGalaxy.jpg" alt="Portada Mario Galaxy">
+            <img src="imagenes/marioGalaxy.jpg" alt="Portada Mario Galaxy">
             <p><strong>28</strong> <span>Abril</span></p>
         </article>
 
         <article class="estreno">
-            <img src="doom.jpg" alt="Portada Doom">
+            <img src="imagenes/doom.jpg" alt="Portada Doom">
             <p><strong>29</strong> <span>Abril</span></p>
         </article>
 
         <article class="estreno">
-            <img src="mickieGame.jpg" alt="Portada Micky Game">
+            <img src="imagenes/mickieGame.jpg" alt="Portada Micky Game">
             <p><strong>30</strong> <span>Abril</span></p>
         </article>
 
         <article class="estreno">
-            <img src="farcry.jpg" alt="Portada Far Cry">
+            <img src="imagenes/farcry.jpg" alt="Portada Far Cry">
             <p><strong>30</strong> <span>Abril</span></p>
         </article>
     </section>
@@ -216,7 +216,7 @@
 </section>
 
 <footer>
-    <p>Copyright &copy; 2024 DreamShop</p>
+    <p>Copyright &copy; 2024 CyberLoot</p>
 
     <address>
         <p>123 Calle Principal, Ciudad, País</p>
