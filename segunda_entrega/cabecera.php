@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="javascript.js"></script>
+
 </head>
 <body>
 
@@ -34,5 +35,11 @@
         <li><a href="skins.php">Skins</a></li>
         <li><a href="ofertas.php">Ofertas</a></li>
         <li><a href="carrito.php">Carrito</a></li>
+        <li><?php if(isset($_SESSION['login'])) { ?>
+                <a href="perfil.php"><i class="fa-solid fa-user"></i></a>
+            <?php } else { ?>
+                <a href="login.php"><i class="fa-solid fa-user"></i></a>
+            <?php } ?>
+        </li>
     </ul>
 </nav>
