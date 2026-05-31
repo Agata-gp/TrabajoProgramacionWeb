@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS carrito_productos (
 
 -- Usuarios por defecto (contraseñas en producción deben usar password_hash)
 INSERT IGNORE INTO usuarios (nombre, email, password, rol) VALUES 
-('Admin', 'admin@cyberloot.com', 'admin', 'admin'),
-('Cliente', 'cliente@cyberloot.com', 'cliente', 'cliente');
+('Administrador', 'admin@cyberloot.com', 'admin', 'admin'),
+('Cliente Demo', 'cliente@cyberloot.com', 'cliente', 'cliente');
 
 -- Productos de ejemplo
 INSERT IGNORE INTO productos (nombre, descripcion, precio, imagen, stock, categoria) VALUES
