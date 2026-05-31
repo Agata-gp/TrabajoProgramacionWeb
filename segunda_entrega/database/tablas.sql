@@ -37,13 +37,15 @@ CREATE TABLE IF NOT EXISTS carrito_productos (
     FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
 );
 
-INSERT INTO usuarios (nombre, email, password, rol) VALUES 
+-- Usuarios por defecto (contraseñas en producción deben usar password_hash)
+INSERT IGNORE INTO usuarios (nombre, email, password, rol) VALUES 
 ('Admin', 'admin@cyberloot.com', 'admin', 'admin'),
 ('Cliente', 'cliente@cyberloot.com', 'cliente', 'cliente');
 
-INSERT INTO productos (nombre, descripcion, precio, imagen, stock, categoria) VALUES
+-- Productos de ejemplo
+INSERT IGNORE INTO productos (nombre, descripcion, precio, imagen, stock, categoria) VALUES
 ('EA FC 26', 'Videojuego deportivo para consola y PC. La nueva entrega de la saga futbolística.', 29.99, 'imagenes/EA_FC.jpg', 50, 'videojuegos'),
-('Mario Galaxy', 'La aventura más emocionante de la saga Mario.', 19.99, 'imagenes/marioGalaxy.jpg', 100, 'videojuegos'),
+('Mario Galaxy', 'Construye, explora y juega con tus amigos en un mundo sin límites.', 19.99, 'imagenes/marioGalaxy.jpg', 100, 'videojuegos'),
 ('Doom Eternal', 'Acción frenética en primera persona. Elimina hordas de demonios.', 39.99, 'imagenes/doom.jpg', 30, 'videojuegos'),
 ('Far Cry 7', 'Aventura en mundo abierto con una historia épica.', 49.99, 'imagenes/farcry.jpg', 25, 'videojuegos'),
 ('BioShock Remastered', 'La colección clásica de BioShock en versión remasterizada.', 24.99, 'imagenes/bioshock.jpg', 40, 'videojuegos'),
