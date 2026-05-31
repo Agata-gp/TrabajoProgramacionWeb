@@ -13,7 +13,7 @@ $productos = $stmt->get_result();
 
 <?php include 'cabecera.php'; ?>
 
-<h2 id="titulo">Videojuegos</h2>
+<h2 class="titulo">Videojuegos</h2>
 
 <?php if (isset($_GET['msg'])): ?>
     <p class="msg-ok"><?php echo htmlspecialchars($_GET['msg']); ?></p>

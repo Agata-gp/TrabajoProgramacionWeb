@@ -7,9 +7,9 @@ $resultado = $conexion->query($sql);
 
 <?php include 'cabecera.php'; ?>
 
-<main>
-    <h2>Ofertas <span style="color:#ff0">🔥</span></h2>
-    <p>Productos por menos de 15€</p>
+    <h2 class="titulo">Ofertas <span style="color:#ff0"></span></h2>
+    <p id="oferta">Productos por menos de 15€</p>
+
 
     <?php if (isset($_GET['msg'])): ?>
         <p class="msg-ok"><?php echo htmlspecialchars($_GET['msg']); ?></p>
@@ -41,7 +41,6 @@ $resultado = $conexion->query($sql);
             </article>
         <?php endwhile; ?>
     </section>
-</main>
 
 <?php include 'footer.php'; ?>
 </body>

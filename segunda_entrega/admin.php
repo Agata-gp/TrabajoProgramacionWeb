@@ -72,8 +72,8 @@ if (isset($_GET['editar'])) {
 
 <?php include 'cabecera.php'; ?>
 
-<main class="admin-panel">
-    <h2>Panel de Administración — Productos</h2>
+<article class="admin-panel">
+    <h2 class="titulo">Panel de Administración — Productos</h2>
 
     <?php if ($mensaje): ?><p class="msg-ok"><?php echo $mensaje; ?></p><?php endif; ?>
     <?php if ($error):   ?><p class="msg-error"><?php echo $error; ?></p><?php endif; ?>
@@ -163,7 +163,7 @@ if (isset($_GET['editar'])) {
             </tbody>
         </table>
     </section>
-</main>
+</article>
 
 <?php include 'footer.php'; ?>
 </body>

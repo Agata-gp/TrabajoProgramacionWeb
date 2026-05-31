@@ -35,8 +35,7 @@ if ($carrito) {
 
 <?php include 'cabecera.php'; ?>
 
-<main>
-    <h2>Tu carrito</h2>
+    <h2 class="titulo">Tu carrito</h2>
 
     <?php if (empty($productos_carrito)): ?>
         <p>Tu carrito está vacío. <a href="index.php">Seguir comprando</a></p>
@@ -86,7 +85,6 @@ if ($carrito) {
             <a href="index.php"><button>Seguir comprando</button></a>
         </section>
     <?php endif; ?>
-</main>
 
 <?php include 'footer.php'; ?>
 </body>
