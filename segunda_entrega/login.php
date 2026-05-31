@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <?php include 'cabecera.php'; ?>
 
-<main>
+<section id="section-login">
     <h2>Iniciar sesión</h2>
 
     <?php if ($error): ?>
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </label>
         <button type="submit">Entrar</button>
     </form>
-</main>
+    </section>
 
 <?php include 'footer.php'; ?>
 </body>

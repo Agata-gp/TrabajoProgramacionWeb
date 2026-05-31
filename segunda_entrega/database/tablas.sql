@@ -50,10 +50,10 @@ INSERT IGNORE INTO productos (nombre, descripcion, precio, imagen, stock, catego
 ('Far Cry 7', 'Aventura en mundo abierto con una historia épica.', 49.99, 'imagenes/farcry.jpg', 25, 'videojuegos'),
 ('BioShock Remastered', 'La colección clásica de BioShock en versión remasterizada.', 24.99, 'imagenes/bioshock.jpg', 40, 'videojuegos'),
 ('Mickey Castle Illusion', 'El juego más emocionante de la saga Mickey Mouse.', 24.99, 'imagenes/mickeyGame.jpg', 40, 'videojuegos'),
-('Tarjeta Steam 10€', 'Recarga tu cuenta de Steam al instante con 10 euros.', 10.00, 'imagenes/steam_10.png', 999, 'tarjetas'),
-('Tarjeta Steam 20€', 'Recarga tu cuenta de Steam al instante con 20 euros.', 20.00, 'imagenes/steam_20.png', 999, 'tarjetas'),
-('Tarjeta PSN 50€', 'Saldo para PlayStation Store, 50 euros.', 50.00, 'imagenes/psn_50.png', 999, 'tarjetas'),
-('Tarjeta Xbox 25€', 'Saldo para Xbox Store, 25 euros.', 25.00, 'imagenes/xbox_25.png', 999, 'tarjetas'),
+('Tarjeta Steam 10€', 'Recarga tu cuenta de Steam al instante con 10 euros.', 10.00, 'imagenes/steam_10.jpg', 999, 'tarjetas'),
+('Tarjeta Steam 20€', 'Recarga tu cuenta de Steam al instante con 20 euros.', 20.00, 'imagenes/steam_20.jpg', 999, 'tarjetas'),
+('Tarjeta PSN 50€', 'Saldo para PlayStation Store, 50 euros.', 50.00, 'imagenes/psn_50.jpg', 999, 'tarjetas'),
+('Tarjeta Xbox 25€', 'Saldo para Xbox Store, 25 euros.', 25.00, 'imagenes/xbox_25.jpg', 999, 'tarjetas'),
 ('Skin Valorant - Pack Reaver', 'Pack exclusivo para personalizar tus armas en Valorant.', 14.99, 'imagenes/skin_valorant_reaver.jpg', 200, 'skins'),
-('Skin Fortnite - Omega', 'Aspecto especial de nivel máximo para tu personaje.', 9.99, 'imagenes/skin_fortnite_omega.jpg', 150, 'skins'),
-('Skin CS2 - AK-47 Neon', 'Skin neón para AK-47 en Counter-Strike 2.', 7.99, 'imagenes/skin_cs2_ak47_neon.png', 100, 'skins');
+('Skin Fortnite - Omega', 'Aspecto especial de nivel máximo para tu personaje.', 9.99, 'imagenes/skin_fornite_omega.jpg', 150, 'skins'),
+('Skin CS2 - AK-47 Neon', 'Skin neón para AK-47 en Counter-Strike 2.', 7.99, 'imagenes/skin_cs2_ak47_neon.jpg', 100, 'skins');
