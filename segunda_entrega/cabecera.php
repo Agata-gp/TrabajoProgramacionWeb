@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>CyberLoot</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos/reset.css">
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/style_carrito.css">
+    <link rel="stylesheet" href="estilos/style_admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script src="javascript.js" defer></script>
 </head>

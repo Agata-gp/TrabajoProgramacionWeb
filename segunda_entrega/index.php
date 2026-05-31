@@ -1,4 +1,18 @@
-<?php require 'conexion.php'; ?>
+<?php require 'conexion.php'; 
+$productosDestacados = $conexion->query("
+    SELECT * 
+    FROM productos 
+    WHERE categoria = 'videojuegos'
+    LIMIT 3
+");
+
+$skinsPopulares = $conexion->query("
+    SELECT * 
+    FROM productos 
+    WHERE categoria = 'skins'
+    LIMIT 3
+");
+?>
 <?php require 'cabecera.php'; ?>
 
 
@@ -23,61 +37,60 @@
         <article class="card">
             <h2 class="card-title">Semana Gamer</h2>
             <p class="card-text">Descuentos en videojuegos digitales, tarjetas regalo, skins y suscripciones.</p>
-            <button>Ver descuentos</button>
+            <a href="ofertas.php"><button>Ver descuentos</button></a>
         </article>
 
         <article>
             <h2>Productos destacados</h2>
 
             <section class="products">
-                <article class="product-card">
-                    <h3>EA FC 26</h3>
-                    <p>Videojuego deportivo para consola y PC.</p>
-                    <strong>29,99€</strong>
-                    <button>Añadir al carrito</button>
-                </article>
+                <?php while ($producto = $productosDestacados->fetch_assoc()): ?>
+                    <article class="product-card">
+                        <img src="<?php echo htmlspecialchars($producto['imagen']); ?>" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
+                        <h3><?php echo htmlspecialchars($producto['nombre']); ?></h3>
+                        <p><?php echo htmlspecialchars($producto['descripcion']); ?></p>
+                        <strong><?php echo number_format($producto['precio'], 2); ?>€</strong>
 
-                <article class="product-card">
-                    <h3>Minecraft</h3>
-                    <p>Construye, explora y juega con tus amigos.</p>
-                    <strong>19,99€</strong>
-                    <button>Añadir al carrito</button>
-                </article>
-
-                <article class="product-card">
-                    <h3>Tarjeta Steam 20€</h3>
-                    <p>Recarga tu cuenta de Steam al instante.</p>
-                    <strong>20,00€</strong>
-                    <button>Añadir al carrito</button>
-                </article>
+                        <?php if (isset($_SESSION['login'])): ?>
+                            <form method="post" action="carrito_accion.php">
+                                <input type="hidden" name="id_producto" value="<?php echo $producto['id_producto']; ?>">
+                                <input type="hidden" name="accion" value="añadir">
+                                <input type="hidden" name="volver" value="index.php">
+                                <button type="submit">Añadir al carrito</button>
+                            </form>
+                        <?php else: ?>
+                            <a href="login.php"><button>Inicia sesión para comprar</button></a>
+                        <?php endif; ?>
+                    </article>
+                <?php endwhile; ?>
             </section>
+
         </article>
 
         <article>
             <h2>Skins populares</h2>
 
-            <section class="products">
-                <article class="product-card">
-                    <h3>Skin Valorant</h3>
-                    <p>Pack exclusivo para personalizar tus armas.</p>
-                    <strong>14,99€</strong>
-                    <button>Comprar</button>
-                </article>
+                <section class="products">
+                    <?php while ($skin = $skinsPopulares->fetch_assoc()): ?>
+                        <article class="product-card">
+                            <img src="<?php echo htmlspecialchars($skin['imagen']); ?>" alt="<?php echo htmlspecialchars($skin['nombre']); ?>">
+                            <h3><?php echo htmlspecialchars($skin['nombre']); ?></h3>
+                            <p><?php echo htmlspecialchars($skin['descripcion']); ?></p>
+                            <strong><?php echo number_format($skin['precio'], 2); ?>€</strong>
 
-                <article class="product-card">
-                    <h3>Skin Fortnite</h3>
-                    <p>Aspecto especial para tu personaje.</p>
-                    <strong>9,99€</strong>
-                    <button>Comprar</button>
-                </article>
-
-                <article class="product-card">
-                    <h3>Caja misteriosa</h3>
-                    <p>Consigue recompensas digitales aleatorias.</p>
-                    <strong>4,99€</strong>
-                    <button>Comprar</button>
-                </article>
-            </section>
+                            <?php if (isset($_SESSION['login'])): ?>
+                                <form method="post" action="carrito_accion.php">
+                                    <input type="hidden" name="id_producto" value="<?php echo $skin['id_producto']; ?>">
+                                    <input type="hidden" name="accion" value="añadir">
+                                    <input type="hidden" name="volver" value="index.php">
+                                    <button type="submit">Añadir al carrito</button>
+                                </form>
+                            <?php else: ?>
+                                <a href="login.php"><button>Inicia sesión para comprar</button></a>
+                            <?php endif; ?>
+                        </article>
+                    <?php endwhile; ?>
+                </section>
         </article>
 
     </section>

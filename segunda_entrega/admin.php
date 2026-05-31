@@ -23,7 +23,7 @@ if (isset($_POST['crear'])) {
         $stmt = $conexion->prepare("INSERT INTO productos (nombre, descripcion, precio, stock, categoria, imagen) VALUES (?,?,?,?,?,?)");
         $stmt->bind_param("ssdiss", $nombre, $descripcion, $precio, $stock, $categoria, $imagen);
         $stmt->execute();
-        $mensaje = "Producto «$nombre» creado correctamente.";
+        $mensaje = "Producto creado correctamente.";
     } else {
         $error = "El nombre y el precio son obligatorios.";
     }
@@ -48,14 +48,17 @@ if (isset($_POST['actualizar'])) {
 // ==================== DELETE ====================
 if (isset($_POST['eliminar'])) {
     $id = (int)$_POST['id_producto'];
-    // Eliminar de carritos primero
-    $conexion->prepare("DELETE cp FROM carrito_productos cp JOIN carrito c ON cp.id_carrito = c.id_carrito WHERE cp.id_producto = ?")->execute();
+
+    $stmt = $conexion->prepare("DELETE cp FROM carrito_productos cp JOIN carrito c ON cp.id_carrito = c.id_carrito WHERE cp.id_producto = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+
     $stmt = $conexion->prepare("DELETE FROM productos WHERE id_producto = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
+
     $mensaje = "Producto eliminado.";
 }
-
 // ==================== LEER TODOS ====================
 $todos = $conexion->query("SELECT * FROM productos ORDER BY categoria, nombre");
 
@@ -73,14 +76,14 @@ if (isset($_GET['editar'])) {
 <?php include 'cabecera.php'; ?>
 
 <article class="admin-panel">
-    <h2 class="titulo">Panel de Administración — Productos</h2>
+    <h2 class="admin-titulo">Panel de Administración — Productos</h2>
 
-    <?php if ($mensaje): ?><p class="msg-ok"><?php echo $mensaje; ?></p><?php endif; ?>
-    <?php if ($error):   ?><p class="msg-error"><?php echo $error; ?></p><?php endif; ?>
+    <?php if ($mensaje): ?><p class="admin-msg-ok"><?php echo $mensaje; ?></p><?php endif; ?>
+    <?php if ($error):   ?><p class="admin-msg-error"><?php echo $error; ?></p><?php endif; ?>
 
     <!-- FORMULARIO CREAR / EDITAR -->
     <section class="admin-form">
-        <h3><?php echo $editando ? 'Editar producto' : 'Nuevo producto'; ?></h3>
+        <h3 class="admin-titulo"><?php echo $editando ? 'Editar producto' : 'Nuevo producto'; ?></h3>
         <form method="post">
             <?php if ($editando): ?>
                 <input type="hidden" name="id_producto" value="<?php echo $editando['id_producto']; ?>">

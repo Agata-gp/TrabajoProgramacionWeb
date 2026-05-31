@@ -1,0 +1,166 @@
+/* ADMIN - CyberLoot */
+
+.admin-panel {
+    width: 92%;
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(10, 18, 35, 0.95);
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    border-radius: 22px;
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.22);
+}
+
+.admin-titulo {
+    text-align: center;
+    color: #39FF88;
+    font-size: 38px;
+    margin-bottom: 30px;
+}
+
+.admin-acciones {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.admin-btn-nuevo,
+.admin-btn-editar,
+.admin-btn-eliminar {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.admin-btn-nuevo {
+    color: #39FF88;
+    border: 1px solid #39FF88;
+    background: #050814;
+}
+
+.admin-btn-nuevo:hover {
+    background: #39FF88;
+    color: #050814;
+}
+
+.admin-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0b1220;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.admin-tabla th {
+    background: #050814;
+    color: #39FF88;
+    padding: 16px;
+    text-align: center;
+}
+
+.admin-tabla td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.22);
+}
+
+.admin-tabla tr:hover {
+    background: rgba(0, 212, 255, 0.08);
+}
+
+.admin-tabla img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.admin-btn-editar {
+    color: #39FF88;
+    border: 1px solid #39FF88;
+    background: #050814;
+    margin-right: 8px;
+}
+
+.admin-btn-editar:hover {
+    background: #39FF88;
+    color: #050814;
+}
+
+.admin-btn-eliminar {
+    color: #ff5c5c;
+    border: 1px solid #ff5c5c;
+    background: #050814;
+}
+
+.admin-btn-eliminar:hover {
+    background: #ff5c5c;
+    color: #050814;
+}
+
+/* FORMULARIOS ADMIN */
+
+.admin-form {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #0b1220;
+    border-radius: 22px;
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    box-shadow: 0 0 22px rgba(0, 212, 255, 0.18);
+}
+
+.admin-form label {
+    display: block;
+    color: #39FF88;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    background: #050814;
+    color: #e8f6ff;
+    border: 1px solid rgba(57, 255, 136, 0.7);
+    border-radius: 10px;
+}
+
+.admin-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.admin-form button {
+    width: 100%;
+}
+
+/* MENSAJES ADMIN */
+
+.admin-msg-ok {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    color: #39FF88;
+    background: rgba(57, 255, 136, 0.12);
+    border: 1px solid #39FF88;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.admin-msg-error {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    color: #ff5c5c;
+    background: rgba(255, 92, 92, 0.12);
+    border: 1px solid #ff5c5c;
+    border-radius: 12px;
+    text-align: center;
+}

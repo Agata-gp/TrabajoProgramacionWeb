@@ -11,7 +11,7 @@ $productos = $stmt->get_result();
 
 <?php include 'cabecera.php'; ?>
 
-<main>
+
     <h2 class="titulo">Skins</h2>
 
     <?php if (isset($_GET['msg'])): ?>
@@ -44,7 +44,6 @@ $productos = $stmt->get_result();
             </article>
         <?php endwhile; ?>
     </section>
-</main>
 
 <?php include 'footer.php'; ?>
 </body>

@@ -1,0 +1,85 @@
+.carrito-panel {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.tabla-carrito {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0b1220;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
+}
+
+.tabla-carrito th {
+    background: #050814;
+    color: #39FF88;
+    padding: 16px;
+    text-align: center;
+}
+
+.tabla-carrito td {
+    padding: 16px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.25);
+}
+
+.tabla-carrito img {
+    width: 70px !important;
+    height: 70px !important;
+    object-fit: cover;
+    border-radius: 10px;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+.tabla-carrito input[type="number"] {
+    width: 70px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #39FF88;
+    background: #050814;
+    color: #e8f6ff;
+    text-align: center;
+}
+
+.carrito-total {
+    margin-top: 30px;
+    padding: 25px;
+    background: #0b1220;
+    border-radius: 18px;
+    text-align: right;
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    box-shadow: 0 0 18px rgba(0, 212, 255, 0.18);
+}
+
+.carrito-total p {
+    font-size: 26px;
+    color: #39FF88;
+    margin-bottom: 20px;
+}
+
+.btn-eliminar {
+    color: #ff5c5c;
+    border-color: #ff5c5c;
+}
+
+.btn-eliminar:hover {
+    background: #ff5c5c;
+    color: #050814;
+}
+
+.carrito-panel p {
+    text-align: center;
+    font-size: 20px;
+    background: #0b1220;
+    padding: 30px;
+    border-radius: 18px;
+}
+
+.carrito-panel p a {
+    color: #39FF88;
+    font-weight: bold;
+}

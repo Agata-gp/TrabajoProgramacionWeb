@@ -14,7 +14,7 @@ $stmt->execute();
 $carrito = $stmt->get_result()->fetch_assoc();
 
 $productos_carrito = [];
-$total = 0;
+$total_precio = 0;
 
 if ($carrito) {
     $id_carrito = $carrito['id_carrito'];
@@ -28,13 +28,13 @@ if ($carrito) {
     $res = $stmt2->get_result();
     while ($row = $res->fetch_assoc()) {
         $productos_carrito[] = $row;
-        $total += $row['precio'] * $row['cantidad'];
+        $total_precio += $row['precio'] * $row['cantidad'];
     }
 }
 ?>
 
 <?php include 'cabecera.php'; ?>
-
+<article class="carrito-panel">
     <h2 class="titulo">Tu carrito</h2>
 
     <?php if (empty($productos_carrito)): ?>
@@ -80,12 +80,12 @@ if ($carrito) {
         </table>
 
         <section class="carrito-total">
-            <p><strong>Total: <?php echo number_format($total, 2); ?>€</strong></p>
+            <p><strong>Total: <?php echo number_format($total_precio, 2); ?>€</strong></p>
             <a href="#"><button>Proceder al pago</button></a>
             <a href="index.php"><button>Seguir comprando</button></a>
         </section>
     <?php endif; ?>
-
+</article>
 <?php include 'footer.php'; ?>
 </body>
 </html>
