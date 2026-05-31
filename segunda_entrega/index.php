@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberLoot</title>
-
-    <link rel="icon" type="image/png" href="moon.png">
-    <link rel="stylesheet" href="reset.css" type="text/css">
-    <link rel="stylesheet" href="style.css" type="text/css">
-
-    <script src="javascript.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/5c2d42c425.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-
-<header>
-    <section>
-        <h1>CyberLoot</h1>
-        <p class="slogan">Videojuegos, skins y contenido digital instantáneo</p>
-    </section>
-
-    <canvas id="logo" width="200" height="200"></canvas>
-</header>
-
-<nav>
-    <form class="search-bar" action="#" method="get">
-        <input type="text" name="buscar" placeholder="Buscar productos">
-        <button type="submit">Buscar</button>
-    </form>
-
-    <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#">Videojuegos</a></li>
-        <li><a href="#">Tarjetas Regalo</a></li>
-        <li><a href="#">Skins</a></li>
-        <li><a href="#">Ofertas</a></li>
-        <li><a href="#">Carrito</a></li>
-        <li>
-            <a href="#" aria-label="Usuario">
-                <i class="fa-regular fa-circle-user fa-xl"></i>
-            </a>
-        </li>
-    </ul>
-</nav>
+<?php require 'cabecera.php'; ?>
 
 <section id="main-section">
 
@@ -215,15 +170,7 @@
     </ul>
 </section>
 
-<footer>
-    <p>Copyright &copy; 2024 CyberLoot</p>
-
-    <address>
-        <p>123 Calle Principal, Ciudad, País</p>
-        <p>Teléfono: +1 234 567 890</p>
-        <p>Email: inventado@gmail.com</p>
-    </address>
-</footer>
+<?php include 'footer.php'; ?>
 
 </body>
 </html>

@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CyberLoot</title>
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
 <header>
     <section>
         <h1>CyberLoot</h1>
@@ -14,16 +28,11 @@
     </form>
 
     <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#">Videojuegos</a></li>
-        <li><a href="#">Tarjetas Regalo</a></li>
-        <li><a href="#">Skins</a></li>
-        <li><a href="#">Ofertas</a></li>
-        <li><a href="#">Carrito</a></li>
-        <li>
-            <a href="#" aria-label="Usuario">
-                <i class="fa-regular fa-circle-user fa-xl"></i>
-            </a>
-        </li>
+        <li><a href="index.php">Inicio</a></li>
+        <li><a href="videojuegos.php">Videojuegos</a></li>
+        <li><a href="tarjetas.php">Tarjetas Regalo</a></li>
+        <li><a href="skins.php">Skins</a></li>
+        <li><a href="ofertas.php">Ofertas</a></li>
+        <li><a href="carrito.php">Carrito</a></li>
     </ul>
 </nav>
