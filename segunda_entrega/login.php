@@ -1,52 +1,56 @@
 <?php
-session_start();
-require("conexion.php");
+require('conexion.php');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_SESSION['login'])) {
+    header("Location: index.php");
+    exit();
+}
 
-    $usuario = $_POST["usuario"];
+$error = '';
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nombre    = trim($_POST["usuario"]);
     $password = $_POST["password"];
 
-    $sql = "SELECT * FROM usuarios WHERE email = ? AND password = ?";
-    $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("ss", $usuario, $password);
+    $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE nombre = ? AND password = ?");
+    $stmt->bind_param("ss", $nombre, $password);
     $stmt->execute();
-
     $resultado = $stmt->get_result();
 
     if ($resultado->num_rows > 0) {
-
         $usuario = $resultado->fetch_assoc();
-
-        $_SESSION["login"] = true;
+        $_SESSION["login"]      = true;
         $_SESSION["id_usuario"] = $usuario["id_usuario"];
-        $_SESSION["nombre"] = $usuario["nombre"];
-        $_SESSION["rol"] = $usuario["rol"];
-
+        $_SESSION["nombre"]     = $usuario["nombre"];
+        $_SESSION["rol"]        = $usuario["rol"];
         header("Location: index.php");
         exit();
     }
 
-    $error = "Usuario o contraseña incorrectos";
+    $error = "Usuario o contraseña incorrectos.";
 }
 ?>
 
-<?php require("cabecera.php"); ?>
+<?php include 'cabecera.php'; ?>
 
 <main>
     <h2>Iniciar sesión</h2>
 
-    <?php if(isset($error)) { ?>
-        <p><?php echo $error; ?></p>
-    <?php } ?>
+    <?php if ($error): ?>
+        <p class="msg-error"><?php echo $error; ?></p>
+    <?php endif; ?>
 
-    <form method="post">
-        <input type="text" name="usuario" placeholder="Usuario" required>
-
-        <input type="password" name="password" placeholder="Contraseña" required>
-
+    <form method="post" class="form-login">
+        <label>Usuario
+            <input type="text" name="usuario" placeholder="Tu usuario" required>
+        </label>
+        <label>Contraseña
+            <input type="password" name="password" placeholder="Contraseña" required>
+        </label>
         <button type="submit">Entrar</button>
     </form>
 </main>
 
-<?php require("footer.php"); ?>
+<?php include 'footer.php'; ?>
+</body>
+</html>

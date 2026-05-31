@@ -1,4 +1,6 @@
+<?php require 'conexion.php'; ?>
 <?php require 'cabecera.php'; ?>
+
 
 <section id="main-section">
 

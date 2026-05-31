@@ -1,10 +1,11 @@
 <?php
+session_start();
 
-$conexion = new mysqli("localhost", "root", "", "CyberLoot"     
-);
+$conexion = new mysqli("localhost", "root", "", "cyberloot");
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
 
+$conexion->set_charset("utf8mb4");
 ?>
