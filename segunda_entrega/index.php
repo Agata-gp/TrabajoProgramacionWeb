@@ -1,4 +1,7 @@
-<?php require 'cabecera.php'; ?>
+<?php require 'cabecera.php'; 
+require('conexion.php');
+?>
+
 
 <section id="main-section">
 
