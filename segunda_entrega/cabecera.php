@@ -5,6 +5,7 @@
     <title>CyberLoot</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_ofertas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script src="javascript.js" defer></script>
 </head>
@@ -35,7 +36,6 @@
                 <i class="fa-solid fa-cart-shopping"></i>
                 <?php
                 if (isset($_SESSION['id_usuario'])) {
-                    require_once 'conexion.php';
                     $uid = $_SESSION['id_usuario'];
                     $q = $conexion->prepare("SELECT SUM(cp.cantidad) as total FROM carrito c JOIN carrito_productos cp ON c.id_carrito = cp.id_carrito WHERE c.id_usuario = ? AND c.estado = 'activo'");
                     $q->bind_param("i", $uid);

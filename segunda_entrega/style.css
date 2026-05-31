@@ -132,6 +132,11 @@ nav a:hover {
     background: #39ff88;
 }
 
+h2#titulo {
+    color: #39FF88;
+    margin-bottom: 20px;
+}
+
 /* Layout principal */
 
 #main-section {
