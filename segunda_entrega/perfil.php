@@ -37,8 +37,8 @@ $usuario = $stmt->get_result()->fetch_assoc();
 
 <?php include 'cabecera.php'; ?>
 
-<main>
-    <h2>Perfil de <?php echo htmlspecialchars($usuario['nombre']); ?></h2>
+<section id="perfil-section">
+    <h2 id="perfil-titulo">Perfil de <?php echo htmlspecialchars($usuario['nombre']); ?></h2>
 
     <?php if ($mensaje): ?>
         <p class="msg-ok"><?php echo $mensaje; ?></p>
@@ -62,11 +62,11 @@ $usuario = $stmt->get_result()->fetch_assoc();
         <?php if ($usuario['rol'] === 'admin'): ?>
             <a href="admin.php"><button>Panel de administración</button></a>
         <?php endif; ?>
-        <form method="post" style="display:inline;">
+        <form method="post">
             <button type="submit" name="logout" class="btn-eliminar">Cerrar sesión</button>
         </form>
     </section>
-</main>
+</section>
 
 <?php include 'footer.php'; ?>
 </body>

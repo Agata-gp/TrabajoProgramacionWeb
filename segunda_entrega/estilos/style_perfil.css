@@ -1,0 +1,101 @@
+#perfil-section {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #0b1220;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.25);
+    color: white;
+}
+
+#perfil-section h2 {
+    text-align: center;
+    color: #39FF88;
+    margin-bottom: 30px;
+}
+
+.perfil-info,
+.perfil-editar,
+.perfil-acciones {
+    background: #050814;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 212, 255, 0.25);
+}
+
+.perfil-info p {
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.perfil-info strong {
+    color: #00D4FF;
+}
+
+.perfil-editar h3 {
+    color: #39FF88;
+    margin-bottom: 15px;
+}
+
+.perfil-editar form {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.perfil-editar input {
+    flex: 1;
+    min-width: 220px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #00D4FF;
+    background: #0b1220;
+    color: white;
+    outline: none;
+}
+
+.perfil-editar input:focus {
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+}
+
+
+.perfil-acciones {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.perfil-acciones a {
+    text-decoration: none;
+}
+
+.msg-ok {
+    text-align: center;
+    background: rgba(57, 255, 136, 0.15);
+    color: #39FF88;
+    border: 1px solid #39FF88;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    #perfil-section {
+        padding: 20px;
+    }
+
+    .perfil-editar form {
+        flex-direction: column;
+    }
+
+    .perfil-acciones {
+        flex-direction: column;
+    }
+
+    .perfil-acciones button {
+        width: 100%;
+    }
+}
