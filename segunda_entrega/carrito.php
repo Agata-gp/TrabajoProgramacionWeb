@@ -81,8 +81,11 @@ if ($carrito) {
 
         <section class="carrito-total">
             <p><strong>Total: <?php echo number_format($total_precio, 2); ?>€</strong></p>
-            <a href="#"><button>Proceder al pago</button></a>
             <a href="index.php"><button>Seguir comprando</button></a>
+            <form method="post" action="carrito_accion.php">
+                <input type="hidden" name="accion" value="pagar">
+                <button type="submit">✔ Proceder al pago</button>
+            </form>
         </section>
     <?php endif; ?>
 </article>

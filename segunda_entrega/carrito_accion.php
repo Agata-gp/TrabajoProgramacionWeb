@@ -78,5 +78,60 @@ if ($accion === 'eliminar') {
     exit();
 }
 
+if ($accion === 'pagar') {
+    $id_carrito_stmt = $conexion->prepare("SELECT id_carrito FROM carrito WHERE id_usuario = ? AND estado = 'activo' LIMIT 1");
+    $id_carrito_stmt->bind_param("i", $id_usuario);
+    $id_carrito_stmt->execute();
+    $carrito_row = $id_carrito_stmt->get_result()->fetch_assoc();
+
+    if (!$carrito_row) {
+        header("Location: carrito.php");
+        exit();
+    }
+
+    $id_carrito = $carrito_row['id_carrito'];
+
+    $stmt_items = $conexion->prepare("SELECT cp.cantidad, p.id_producto, p.nombre, p.precio FROM carrito_productos cp JOIN productos p ON cp.id_producto = p.id_producto WHERE cp.id_carrito = ?");
+    $stmt_items->bind_param("i", $id_carrito);
+    $stmt_items->execute();
+    $items = $stmt_items->get_result()->fetch_all(MYSQLI_ASSOC);
+
+    if (empty($items)) {
+        header("Location: carrito.php");
+        exit();
+    }
+
+    $total = 0;
+    foreach ($items as $item) {
+        $total += $item['precio'] * $item['cantidad'];
+    }
+
+    $conexion->begin_transaction();
+    try {
+        $ins_pedido = $conexion->prepare("INSERT INTO pedidos (id_usuario, total) VALUES (?, ?)");
+        $ins_pedido->bind_param("id", $id_usuario, $total);
+        $ins_pedido->execute();
+        $id_pedido = $conexion->insert_id;
+
+        $ins_linea = $conexion->prepare("INSERT INTO pedido_productos (id_pedido, id_producto, nombre_producto, precio_unitario, cantidad) VALUES (?, ?, ?, ?, ?)");
+        foreach ($items as $item) {
+            $ins_linea->bind_param("iisdi", $id_pedido, $item['id_producto'], $item['nombre'], $item['precio'], $item['cantidad']);
+            $ins_linea->execute();
+        }
+
+        $cierra = $conexion->prepare("UPDATE carrito SET estado = 'completado' WHERE id_carrito = ?");
+        $cierra->bind_param("i", $id_carrito);
+        $cierra->execute();
+
+        $conexion->commit();
+        header("Location: factura.php?id=$id_pedido");
+        exit();
+    } catch (Exception $e) {
+        $conexion->rollback();
+        header("Location: carrito.php?error=Error+al+procesar+el+pago");
+        exit();
+    }
+}
+
 header("Location: index.php");
 exit();
