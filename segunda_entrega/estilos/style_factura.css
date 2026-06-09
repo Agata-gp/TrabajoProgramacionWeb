@@ -1,0 +1,144 @@
+/* ===== FACTURA ===== */
+
+.factura-panel {
+    width: 92%;
+    max-width: 860px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(10, 18, 35, 0.97);
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    border-radius: 22px;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.22);
+}
+
+.factura-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(57, 255, 136, 0.4);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.factura-logo h2 {
+    font-size: 42px;
+    color: #39FF88;
+    font-family: Nova, Arial, sans-serif;
+    text-shadow: 0 0 10px #39FF88;
+    margin-bottom: 6px;
+}
+
+.factura-logo p {
+    color: #8fb8c8;
+    font-size: 14px;
+    margin: 2px 0;
+}
+
+.factura-meta {
+    text-align: right;
+}
+
+.factura-meta h3 {
+    font-size: 26px;
+    color: #39FF88;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.factura-meta p {
+    font-size: 15px;
+    color: #d8f8ff;
+    margin: 4px 0;
+}
+
+.factura-cliente {
+    margin-bottom: 30px;
+    padding: 18px 22px;
+    background: #0b1220;
+    border-radius: 14px;
+    border-left: 3px solid #39FF88;
+}
+
+.factura-cliente h4 {
+    color: #39FF88;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.factura-cliente p {
+    color: #d8f8ff;
+    margin: 3px 0;
+}
+
+.factura-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.factura-tabla th {
+    background: #050814;
+    color: #39FF88;
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(57, 255, 136, 0.5);
+}
+
+.factura-tabla td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.18);
+    color: #d8f8ff;
+}
+
+.factura-tabla tfoot td {
+    padding: 16px;
+    color: #39FF88;
+    font-size: 18px;
+    border-top: 2px solid rgba(57, 255, 136, 0.5);
+    border-bottom: none;
+}
+
+.factura-acciones {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0 20px;
+}
+
+.factura-pie {
+    text-align: center;
+    color: #8fb8c8;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* Estados */
+.estado-completado {
+    color: #39FF88;
+    font-weight: bold;
+}
+
+.estado-cancelado {
+    color: #ff5c5c;
+    font-weight: bold;
+}
+
+
+
+/* ===== PRINT ===== */
+
+@media print {
+    .no-print, header, nav, footer { display: none !important; }
+    body { background: white !important; color: black !important; }
+    .factura-panel { border: none; box-shadow: none; color: black; background: white; }
+    .factura-logo h2 { color: #1a1a1a; text-shadow: none; }
+    .factura-meta h3, .factura-tabla th, .factura-tabla tfoot td,
+    .factura-cliente h4 { color: #1a1a1a; }
+    .factura-tabla td, .factura-cliente p, .factura-meta p,
+    .factura-logo p, .factura-pie { color: #333; }
+}

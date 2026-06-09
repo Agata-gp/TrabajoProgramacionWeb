@@ -9,22 +9,24 @@ if (isset($_SESSION['login'])) {
 $error = '';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $nombre    = trim($_POST["usuario"]);
+    $nombre   = trim($_POST["usuario"]);
     $password = $_POST["password"];
 
-    $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE nombre = ? AND password = ?");
-    $stmt->bind_param("ss", $nombre, $password);
+    $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE nombre = ?");
+    $stmt->bind_param("s", $nombre);
     $stmt->execute();
     $resultado = $stmt->get_result();
 
     if ($resultado->num_rows > 0) {
         $usuario = $resultado->fetch_assoc();
-        $_SESSION["login"]      = true;
-        $_SESSION["id_usuario"] = $usuario["id_usuario"];
-        $_SESSION["nombre"]     = $usuario["nombre"];
-        $_SESSION["rol"]        = $usuario["rol"];
-        header("Location: index.php");
-        exit();
+        if (password_verify($password, $usuario["password"])) {
+            $_SESSION["login"]      = true;
+            $_SESSION["id_usuario"] = $usuario["id_usuario"];
+            $_SESSION["nombre"]     = $usuario["nombre"];
+            $_SESSION["rol"]        = $usuario["rol"];
+            header("Location: index.php");
+            exit();
+        }
     }
 
     $error = "Usuario o contraseña incorrectos.";

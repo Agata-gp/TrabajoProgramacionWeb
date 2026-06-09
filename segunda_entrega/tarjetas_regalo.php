@@ -30,7 +30,7 @@ $productos = $stmt->get_result();
                     <form method="post" action="carrito_accion.php">
                         <input type="hidden" name="id_producto" value="<?php echo $producto['id_producto']; ?>">
                         <input type="hidden" name="accion" value="añadir">
-                        <input type="hidden" name="volver" value="tarjetasRegalo.php">
+                        <input type="hidden" name="volver" value="tarjetas_regalo.php">
                         <button type="submit">Añadir al carrito</button>
                     </form>
                 <?php else: ?>

@@ -89,3 +89,5 @@ $productos = $stmt->get_result();
 </section>
 
 <?php include 'footer.php'; ?>
+</body>
+</html>

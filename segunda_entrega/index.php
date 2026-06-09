@@ -133,7 +133,7 @@ $skinsPopulares = $conexion->query("
         </article>
 
         <article class="estreno">
-            <img src="imagenes/mickieGame.jpg" alt="Portada Micky Game">
+            <img src="imagenes/mickeyGame.jpg" alt="Portada Mickey Game">
             <p><strong>30</strong> <span>Abril</span></p>
         </article>
 

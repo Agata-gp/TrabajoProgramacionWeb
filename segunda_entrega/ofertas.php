@@ -7,7 +7,7 @@ $resultado = $conexion->query($sql);
 
 <?php include 'cabecera.php'; ?>
 
-    <h2 class="titulo">Ofertas <span style="color:#ff0"></span></h2>
+    <h2 class="titulo">Ofertas</h2>
     <p id="oferta">Productos por menos de 15€</p>
 
 

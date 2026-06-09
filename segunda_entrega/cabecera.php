@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="estilos/style_admin.css">
     <link rel="stylesheet" href="estilos/style_perfil.css">
     <link rel="stylesheet" href="estilos/style_login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="estilos/style_factura.css">
     <script src="JS/javascript.js" defer></script>
+    <script src="https://kit.fontawesome.com/5c2d42c425.js" crossorigin="anonymous"></script>
 </head>
 <body>
 

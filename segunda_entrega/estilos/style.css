@@ -13,7 +13,7 @@ body {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Nova, Arial, Helvetica, sans-serif;
     background: radial-gradient(circle at top, #18243a, #070912 70%);
     color: #e8f6ff;
 }
@@ -33,7 +33,7 @@ header {
 
 h1 {
     font-size: 100px;
-    font-family: Nova, Arial, sans-serif;
+    font-family: Nova;
     letter-spacing: 4px;
     color: #39FF88;
     text-shadow: 0 0 10px #39FF88, 0 0 25px #0077ff;

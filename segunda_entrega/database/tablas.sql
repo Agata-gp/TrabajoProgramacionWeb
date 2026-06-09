@@ -57,10 +57,10 @@ CREATE TABLE IF NOT EXISTS pedido_productos (
     FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
 );
 
--- Usuarios por defecto (contraseñas en producción deben usar password_hash)
+-- Usuarios por defecto
 INSERT IGNORE INTO usuarios (nombre, email, password, rol) VALUES 
-('Admin', 'admin@cyberloot.com', 'admin', 'admin'),
-('Cliente', 'cliente@cyberloot.com', 'cliente', 'cliente');
+('Admin', 'admin@cyberloot.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin'),
+('Cliente', 'cliente@cyberloot.com', '$2y$10$TKh8H1.PfQ0A32/WyTB8duVDSSHjBMDLdVpBFk5kpDnOLiJNHJV2C', 'cliente');
 
 -- Productos de ejemplo
 INSERT IGNORE INTO productos (nombre, descripcion, precio, imagen, stock, categoria) VALUES

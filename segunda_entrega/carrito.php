@@ -84,7 +84,7 @@ if ($carrito) {
             <a href="index.php"><button>Seguir comprando</button></a>
             <form method="post" action="carrito_accion.php">
                 <input type="hidden" name="accion" value="pagar">
-                <button type="submit">✔ Proceder al pago</button>
+                <button type="submit">Proceder al pago</button>
             </form>
         </section>
     <?php endif; ?>

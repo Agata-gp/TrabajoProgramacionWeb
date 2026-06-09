@@ -9,7 +9,6 @@ if (!isset($_SESSION['login'])) {
 $id_pedido  = (int)($_GET['id'] ?? 0);
 $id_usuario = $_SESSION['id_usuario'];
 
-// Cargar cabecera del pedido (solo el propio usuario o admin puede verla)
 $stmt = $conexion->prepare(
     "SELECT p.id_pedido, p.fecha, p.total, p.estado, u.nombre, u.email
      FROM pedidos p
@@ -27,7 +26,6 @@ if (!$pedido) {
     exit();
 }
 
-// Cargar líneas del pedido
 $stmt2 = $conexion->prepare(
     "SELECT nombre_producto, precio_unitario, cantidad,
             (precio_unitario * cantidad) AS subtotal
@@ -92,9 +90,9 @@ $lineas = $stmt2->get_result()->fetch_all(MYSQLI_ASSOC);
     </table>
 
     <section class="factura-acciones no-print">
-        <button onclick="window.print()">🖨 Imprimir / Guardar PDF</button>
-        <a href="mis_pedidos.php"><button>📋 Mis pedidos</button></a>
-        <a href="index.php"><button>🏠 Inicio</button></a>
+        <button onclick="window.print()">Imprimir / Guardar PDF</button>
+        <a href="mis_pedidos.php"><button>Mis pedidos</button></a>
+        <a href="index.php"><button>Inicio</button></a>
     </section>
 
     <p class="factura-pie">Gracias por tu compra en CyberLoot. Este documento sirve como justificante de pago.</p>

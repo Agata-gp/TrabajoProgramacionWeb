@@ -59,7 +59,7 @@ $usuario = $stmt->get_result()->fetch_assoc();
 
     <section class="perfil-acciones">
         <a href="carrito.php"><button>Ver mi carrito</button></a>
-        <a href="mis_pedidos.php"><button>📋 Mis pedidos</button></a>
+        <a href="mis_pedidos.php"><button>Mis pedidos</button></a>
         <?php if ($usuario['rol'] === 'admin'): ?>
             <a href="admin.php"><button>Panel de administración</button></a>
         <?php endif; ?>

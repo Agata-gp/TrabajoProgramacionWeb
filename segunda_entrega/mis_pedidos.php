@@ -19,7 +19,7 @@ $pedidos = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 <?php include 'cabecera.php'; ?>
 
 <article class="admin-panel">
-    <h2 class="titulo">📋 Mis pedidos</h2>
+    <h2 class="titulo">Mis pedidos</h2>
 
     <?php if (empty($pedidos)): ?>
         <p style="text-align:center;margin-top:30px;">Aún no has realizado ningún pedido. <a href="index.php" style="color:#39FF88;">Empieza a comprar</a></p>
@@ -45,7 +45,7 @@ $pedidos = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                 </td>
                 <td style="padding:14px;">
                     <a href="factura.php?id=<?php echo $p['id_pedido']; ?>">
-                        <button>🧾 Ver factura</button>
+                        <button>Ver factura</button>
                     </a>
                 </td>
             </tr>
@@ -55,7 +55,7 @@ $pedidos = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     <?php endif; ?>
 
     <section style="text-align:center;margin-top:30px;">
-        <a href="perfil.php"><button>← Volver al perfil</button></a>
+        <a href="perfil.php"><button>Volver al perfil</button></a>
     </section>
 </article>
 
