@@ -39,12 +39,12 @@ $lineas = $stmt2->get_result()->fetch_all(MYSQLI_ASSOC);
 
 <article class="factura-panel">
     <section class="factura-cabecera">
-        <div class="factura-logo">
+        <section class="factura-logo">
             <h2>CyberLoot</h2>
             <p>Videojuegos, skins y contenido digital instantáneo</p>
             <p>inventado@gmail.com · +1 234 567 890</p>
-        </div>
-        <div class="factura-meta">
+        </section>
+        <section class="factura-meta">
             <h3>FACTURA</h3>
             <p><strong>Nº:</strong> <?php echo str_pad($pedido['id_pedido'], 6, '0', STR_PAD_LEFT); ?></p>
             <p><strong>Fecha:</strong> <?php echo date('d/m/Y H:i', strtotime($pedido['fecha'])); ?></p>
@@ -53,7 +53,7 @@ $lineas = $stmt2->get_result()->fetch_all(MYSQLI_ASSOC);
                     <?php echo ucfirst($pedido['estado']); ?>
                 </span>
             </p>
-        </div>
+        </section>
     </section>
 
     <section class="factura-cliente">
