@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <p class="msg-error"><?php echo $error; ?></p>
     <?php endif; ?>
 
-    <form method="post" class="form-login">
+    <form method="post" class="form-login" id="loginForm">
         <label>Usuario
             <input type="text" name="usuario" placeholder="Tu usuario" required>
         </label>
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </label>
         <button type="submit">Entrar</button>
     </form>
-    </section>
+</section>
 
 <?php include 'footer.php'; ?>
 </body>
